@@ -1,0 +1,29 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h3>{{title}}</h3>
+<hr />
+
+
+<table class="table">
+    <tr>
+        <th>
+           Sala
+        </th>
+        <th></th>
+    </tr>
+
+{% for room in roomList %}
+    <tr>
+        <td>
+           {{room.additional_info}}
+        </td>
+        <td>          
+        </td>
+    </tr>
+{%endfor%}
+
+</table>
+
+{% endblock %}

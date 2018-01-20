@@ -33,10 +33,10 @@ class Room(models.Model):
         app_label = 'app'
 
 class Task(models.Model):
-    doctor_id = models.ForeignKey(Doctor)
-    patient_id = models.ForeignKey(Patient)
-    medical_examination_id = models.ForeignKey(MedicalExamination)
-    room_id = models.ForeignKey(Room)
+    doctor = models.ForeignKey(Doctor)
+    patient = models.ForeignKey(Patient)
+    medical_examination = models.ForeignKey(MedicalExamination)
+    room = models.ForeignKey(Room)
     additional_info = models.TextField()
     class Meta:
         app_label = 'app'

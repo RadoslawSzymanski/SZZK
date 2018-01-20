@@ -2,32 +2,32 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>Django</h1>
-    <p class="lead">Django is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+<div class="jumbotron">   
+    <div class="row">
+        <div class="col-md-2">           
+            <img class="logoImage" src="../../static/app/images/doctor.jpg" />
+        </div>
+        <div class="col-md-10">
+            <h1>SZZK</h1>
+            <h2>System Zarzadzania Zadaniami w Klinice</h2>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Django gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://www.djangobook.com/en/2.0/index.html">Learn more &raquo;</a></p>
+{% if user.is_authenticated %}
+    <div class="row">
+        <div class="col-md-4">
+            <p>Jestes zalogowany jako: <b>Pan Doktor</b> - <b>Kardiolog</b>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.org/">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Zadania na dzis:</h3>
+            <p class="holidayIndicator">Dzis urlop!</p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
-</div>
+{% else %}
+    <h2>Zaloguj sie aby przegladac zadania.</h2>
+{% endif %}
 
 {% endblock %}

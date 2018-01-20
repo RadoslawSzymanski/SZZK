@@ -1,0 +1,61 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h3>{{title}}</h3>
+<hr />
+
+<table class="table">
+    <tr>
+        <th>
+            <p>Doktor</p>
+        </th>
+        <th>
+            <p>Badanie</p>
+        </th>
+        <th>
+            <p>Pacjent</p>
+        </th>
+        <th>
+            <p>Sala</p>
+        </th>
+        <th>
+            <p>Godzina rozpoczęcia</p>
+        </th>
+        <th>
+            <p>Dodatkowe informacje</p>
+        </th>
+        <th></th>
+    </tr>
+
+{% for task in taskList %}
+    <tr>
+        <td>
+            {{task.doctor.name}} {{task.doctor.surname}}
+        </td>
+        <td>
+            {{task.medicalExamination.name}}
+        </td>
+        <td>
+            {{task.Patient.name}} {{task.Patient.surname}}
+        </td>
+        <td>
+            {{task.room.additional_info}}
+        </td>
+        <td>
+            {{task.medicalExamination.start_time}}
+        </td>
+        <td>
+            {{task.additional_info}}
+        </td>
+        <td>          
+            
+        </td>
+    </tr>
+{% endfor %}
+
+</table>
+
+
+
+{% endblock %}

@@ -6,9 +6,11 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from django.http import HttpResponse
+from app.models import Task, Doctor, Patient, Room, MedicalExamination
 
 def home(request):
-    """Renders the home page."""
+    """Renders the home page."""    
     assert isinstance(request, HttpRequest)
     return render(
         request,
@@ -45,15 +47,68 @@ def about(request):
         }
     )
 
-def pokaz(request):
-    """Renders the about page."""
+
+def tasks(request):
+    taskList = Task.objects.all()
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/pokaz.html',
+        'app/tasksList.html',
         {
-            'title':'Pokazowa funkcjonalnosc',
+            'title':'Lista zadan',
+            'taskList' : taskList,
+            
+        }
+    )
+
+def rooms(request):
+    roomList = Room.objects.all()
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/roomsList.html',
+        {
+            'title':'Lista sal',
+            'roomList': roomList,
+        }
+    )
+
+def patients(request):
+    patientsList = Patient.objects.all()
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/patientsList.html',
+        {
+            'title':'Lista pacjentow',
+            'patientsList': patientsList
+        }
+    )
+
+def medicalExaminations(request):
+    medicalExaminationsList = MedicalExamination.objects.all()
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/medicalExaminationsList.html',
+        {
+            'title':'Lista badan',
+            'medicalExaminationList': medicalExaminationsList
+        }
+    )
+
+def help(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/help.html',
+        {
+            'title':'Pomoc',
             'message':'',
             'year':datetime.now().year,
         }
     )
+
+
+
+

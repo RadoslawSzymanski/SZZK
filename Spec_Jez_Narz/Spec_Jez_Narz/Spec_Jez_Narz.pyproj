@@ -49,20 +49,24 @@
     <Folder Include="app\static\app\" />
     <Folder Include="app\static\app\content\" />
     <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\images\" />
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="Spec_Jez_Narz\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\templates\app\doctor_list.html" />
-    <Content Include="app\templates\app\medical_examination_list.html" />
-    <Content Include="app\templates\app\medical_examination.html" />
-    <Content Include="app\templates\app\patient_list - Copy.html" />
-    <Content Include="app\templates\app\room_list.html" />
+    <Content Include="app\static\app\content\CustomStyleSheet.css" />
+    <Content Include="app\static\app\images\doctor.jpg" />
+    <Content Include="app\templates\app\help.html" />
+    <Content Include="app\templates\app\doctorsList.html" />
+    <Content Include="app\templates\app\medicalExaminationsList.html" />
+    <Content Include="app\templates\app\medicalExamination.html" />
+    <Content Include="app\templates\app\patientsList.html" />
+    <Content Include="app\templates\app\roomsList.html" />
     <Content Include="app\templates\app\room.html" />
-    <Content Include="app\templates\app\task_list.html" />
     <Content Include="app\templates\app\task.html" />
+    <Content Include="app\templates\app\tasksList.html" />
     <Content Include="app\templates\app\doctor.html" />
     <Content Include="app\templates\app\patient.html" />
     <Content Include="requirements.txt" />

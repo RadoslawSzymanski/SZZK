@@ -1,0 +1,54 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h3>{{title}}</h3>
+<hr />
+
+<table class="table">
+    <tr>
+        <th>
+            Imie
+        </th>
+        <th>
+            Nazwisko
+        </th>
+        <th>
+            Identyfikator
+        </th>
+        <th>
+           Data urodzenia
+        </th>
+        <th>
+           Dodatkowe informacje
+        </th>
+        <th></th>
+    </tr>
+
+{% for patient in patientsList%}
+    <tr>
+        <td>
+           {{patient.name}}
+        </td>
+        <td>
+            {{patient.surname}}
+        </td>
+        <td>
+            {{patient.personal_id}}
+        </td>
+        <td>
+            {{patient.birth_date}}
+        </td>
+        <td>
+            {{patient.additional_info}}
+        </td>
+        <td>
+        </td>
+    </tr>
+
+{%endfor%}
+
+</table>
+
+
+{% endblock %}

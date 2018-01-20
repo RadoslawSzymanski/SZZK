@@ -1,0 +1,59 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h3>{{title}}</h3>
+<hr />
+
+<table class="table">
+    <tr>
+        <th>
+           Nazwa
+        </th>
+        <th>
+            Czas rozpoczęcia
+        </th>
+        <th>
+            Czas trwania[m]
+        </th>
+        <th>
+            Forma wyniku
+        </th>
+        <th>
+            Przeprowadzony
+        </th>
+        <th>
+            Dodatkowe informacje
+        </th>
+        <th></th>
+    </tr>
+
+{% for medicalExamination in medicalExaminationList %}
+    <tr>
+        <td>
+            {{medicalExamination.name}}
+        </td>
+        <td>
+            {{medicalExamination.start_time}}
+        </td>
+        <td>
+            {{medicalExamination.duration}}
+        </td>
+        <td>
+            {{medicalExamination.result}}
+        </td>
+        <td>
+            {{medicalExamination.was_perfomed}}
+        </td>
+        <td>
+            {{medicalExamination.additional_info}}
+        </td>
+        <td>
+        </td>
+    </tr>
+{% endfor %}
+
+</table>
+
+
+{% endblock %}
